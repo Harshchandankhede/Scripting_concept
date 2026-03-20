@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Division Exception Handling</title>
+</head>
+<body>
+  <script>
+    try {
+      
+      let numerator = parseFloat(prompt("Enter numerator:"));
+      let denominator = parseFloat(prompt("Enter denominator:"));
+
+      
+      if (denominator === 0) {
+        throw new Error("Division by zero is not allowed!");
+      }
+
+      
+      let result = numerator / denominator;
+      alert("Result: " + result);
+    } catch (err) {
+      //error
+      alert("Error: " + err.message);
+    } finally {
+      console.log("Division attempt finished.");
+    }
+  </script>
+</body>
+</html>

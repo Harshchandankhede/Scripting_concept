@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+
+    <script>
+        function emailValidation() {
+
+            
+            let email = prompt("Enter your Email ID:");
+
+            
+            if (email === null) {
+                alert("Input cancelled");
+                return;
+            }
+
+            
+            if (email === "") {
+                alert("Email cannot be empty");
+                return;
+            }
+
+            // Email format
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            
+            if (email.match(pattern)) {
+                alert("Valid Email ID: " + email);
+            }
+            else {
+                alert("Invalid Email ID");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>Email Validation Using JavaScript</h2>
+
+<button onclick="emailValidation()">
+    Enter Email
+</button>
+
+</body>
+</html>

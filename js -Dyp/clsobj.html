@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Account Example</title>
+</head>
+<body>
+  <h2>Bank Account Details</h2>
+
+  <script>
+    class BankAccount {
+      constructor(holderName, accountNo, balance) {
+        this.holderName = holderName;
+        this.accountNo = accountNo;
+        this.balance = balance;
+      }
+
+      deposit(amount) {
+        if (amount > 0) {
+          this.balance += amount;
+          document.write(`<p>Deposited ₹${amount}. New balance: ₹${this.balance}</p>`);
+        } else {
+          document.write("<p>Deposit amount must be positive.</p>");
+        }
+      }
+
+      withdraw(amount) {
+        if (amount > 0 && amount <= this.balance) {
+          this.balance -= amount;
+          document.write(`<p>Withdrew ₹${amount}. New balance: ₹${this.balance}</p>`);
+        } else {
+          document.write("<p>Invalid withdrawal amount or insufficient funds.</p>");
+        }
+      }
+
+      displayDetails() {
+        document.write(`<p><strong>Account Holder:</strong> ${this.holderName}</p>`);
+        document.write(`<p><strong>Account No:</strong> ${this.accountNo}</p>`);
+        document.write(`<p><strong>Balance:</strong> ₹${this.balance}</p>`);
+      }
+    }
+
+    
+    let name = prompt("Enter account holder name:");
+    let accNo = prompt("Enter account number:");
+    let balance = parseFloat(prompt("Enter initial balance:"));
+
+    
+    const myAccount = new BankAccount(name, accNo, balance);
+
+    
+    myAccount.displayDetails();
+
+    
+    let depositAmount = parseFloat(prompt("Enter amount to deposit:"));
+    myAccount.deposit(depositAmount);
+
+    
+    let withdrawAmount = parseFloat(prompt("Enter amount to withdraw:"));
+    myAccount.withdraw(withdrawAmount);
+  </script>
+</body>
+</html>

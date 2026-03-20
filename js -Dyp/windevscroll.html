@@ -1,0 +1,28 @@
+<!-- 🌟 Q3: Display Message When Window is Scrolled -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Event</title>
+
+    <script>
+        function scrollMsg() {
+            document.getElementById("msg").innerHTML =
+                "Page is being scrolled!";
+        }
+
+        window.onscroll = scrollMsg;
+    </script>
+
+</head>
+
+<body>
+
+<h2>Scroll Event Example</h2>
+
+<p id="msg">Scroll the page down</p>
+
+<!-- Extra content for scrolling -->
+<div style="height:1500px;"></div>
+
+</body>
+</html>

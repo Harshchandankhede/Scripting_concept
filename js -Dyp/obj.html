@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Account Example</title>
+</head>
+<body>
+  <h2>Bank Account Details</h2>
+
+  <script>
+    class BankAccount {
+      constructor(holderName, accountNo, balance) {
+        this.holderName = holderName;
+        this.accountNo = accountNo;
+        this.balance = balance;
+      }
+
+      // Deposit money
+      deposit(amount) {
+        if (amount > 0) {
+          this.balance += amount;
+          document.write(`<p>Deposited ₹${amount}. New balance: ₹${this.balance}</p>`);
+        } else {
+          document.write("<p>Deposit amount must be positive.</p>");
+        }
+      }
+
+      // Withdraw money
+      withdraw(amount) {
+        if (amount > 0 && amount <= this.balance) {
+          this.balance -= amount;
+          document.write(`<p>Withdrew ₹${amount}. New balance: ₹${this.balance}</p>`);
+        } else {
+          document.write("<p>Invalid withdrawal amount or insufficient funds.</p>");
+        }
+      }
+
+      // Display account details
+      displayDetails() {
+        document.write(`<p><strong>Account Holder:</strong> ${this.holderName}</p>`);
+        document.write(`<p><strong>Account No:</strong> ${this.accountNo}</p>`);
+        document.write(`<p><strong>Balance:</strong> ₹${this.balance}</p>`);
+      }
+    }
+
+    // Create an object
+    const myAccount = new BankAccount("Asha", "123456789", 5000);
+
+    // Show initial details
+    myAccount.displayDetails();
+
+    // Example actions (executed immediately on page load)
+    myAccount.deposit(1000);   // Adds money
+    myAccount.withdraw(2000);  // Deducts money
+  </script>
+</body>
+</html>

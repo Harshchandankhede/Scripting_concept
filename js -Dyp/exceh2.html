@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Validation</title>
+</head>
+<body>
+  <script>
+    try {
+      
+      let ageInput = prompt("Enter your age:");
+
+      if (ageInput === "") {
+        throw new Error("Age cannot be empty!");
+      }
+
+      let age = parseInt(ageInput);
+
+      if (isNaN(age)) {
+        throw new Error("Please enter a valid number!");
+      }
+
+      if (age < 18) {
+        throw new Error("Access denied! Age must be 18 or above.");
+      }
+
+      alert("Access granted. Age is valid!");
+    } catch (err) {
+      alert("Error: " + err.message);
+    } finally {
+      console.log("Age validation attempt finished.");
+    }
+  </script>
+</body>
+</html>

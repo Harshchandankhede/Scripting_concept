@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Username Validation</title>
+</head>
+<body>
+  <script>
+    try {
+      
+      let username = prompt("Enter your username:");
+
+      
+      if (username === "" || username === null) {
+        throw new Error("Username cannot be empty!");
+      }
+
+      
+      alert("Welcome, " + username + "!");
+    } catch (err) {
+      
+      alert("Error: " + err.message);
+    } finally {
+      console.log("Username validation attempt finished.");
+    }
+  </script>
+</body>
+</html>

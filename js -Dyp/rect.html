@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rectangle Area Calculator</title>
+</head>
+<body>
+  <h2>Rectangle Area Calculator</h2>
+
+  <script>
+    
+    class Rectangle {
+      constructor(length, width) {
+        this.length = length;
+        this.width = width;
+      }
+
+      
+      calculateArea() {
+        return this.length * this.width;
+      }
+
+      
+      displayDetails() {
+        document.write(`<p><strong>Length:</strong> ${this.length}</p>`);
+        document.write(`<p><strong>Width:</strong> ${this.width}</p>`);
+        document.write(`<p><strong>Area:</strong> ${this.calculateArea()}</p>`);
+      }
+    }
+
+    
+    let length = parseFloat(prompt("Enter the length of the rectangle:"));
+    let width = parseFloat(prompt("Enter the width of the rectangle:"));
+
+    
+    const rect = new Rectangle(length, width);
+
+    
+    rect.displayDetails();
+  </script>
+</body>
+</html>

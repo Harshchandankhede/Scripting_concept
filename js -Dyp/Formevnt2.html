@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Focus and Blur Event</title>
+
+    <script>
+        function enterMessage() {
+            alert("Cursor entered input field");
+        }
+
+        function leaveMessage() {
+            alert("Cursor left input field");
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>Input Field Events</h2>
+
+Enter Name:
+
+<input type="text" 
+       onfocus="enterMessage()" 
+       onblur="leaveMessage()">
+
+</body>
+</html>

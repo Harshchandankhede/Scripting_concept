@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number and Image Validation</title>
+
+    <script>
+        function validateForm() {
+
+            
+            let num = document.getElementById("mobile").value;
+
+    
+            let img = document.getElementById("image").value;
+
+            
+            let numPattern = /^[0-9]{10}$/;
+
+            
+            let imgPattern = /\.(jpg|jpeg|png)$/i;
+
+            
+            if (num == "") {
+                alert("Please enter mobile number");
+                return false;
+            }
+
+            if (!num.match(numPattern)) {
+                alert("Enter valid 10-digit mobile number");
+                return false;
+            }
+
+            
+            if (img == "") {
+                alert("Please select an image");
+                return false;
+            }
+
+            if (!img.match(imgPattern)) {
+                alert("Only JPG, JPEG, PNG images allowed");
+                return false;
+            }
+
+            
+            alert("Number and Image Validated Successfully!");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>Number and Image Validation</h2>
+
+<form onsubmit="return validateForm()">
+
+    Mobile Number:
+    <input type="text" id="mobile">
+    <br><br>
+
+    Select Image:
+    <input type="file" id="image">
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

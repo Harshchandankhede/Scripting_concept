@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mouse Event Demo</title>
+</head>
+<body>
+  <h2>Mouse Event Handling</h2>
+
+  <div id="box" 
+       style="width:200px; height:100px; background-color:rgb(90, 169, 196); text-align:center; line-height:100px; border:2px solid black;"
+       onmouseover="mouseOverEvent()" 
+       onmouseout="mouseOutEvent()" 
+       onclick="mouseClickEvent()" 
+       ondblclick="mouseDoubleClickEvent()">
+    Hover / Click Me
+  </div>
+
+  <p id="message"></p> <!-- Place to show messages -->
+
+  <script>
+    function mouseOverEvent() {
+      document.getElementById("message").innerText = "Mouse is over the box!";
+    }
+
+    function mouseOutEvent() {
+      document.getElementById("message").innerText = "Mouse left the box!";
+    }
+
+    function mouseClickEvent() {
+      document.getElementById("message").innerText = "Box clicked once!";
+    }
+
+    function mouseDoubleClickEvent() {
+      document.getElementById("message").innerText = "Box double-clicked!";
+    }
+  </script>
+</body>
+</html>
